@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+{% set active_page = "results" %}
+
+{% block content %}
+
+  {% if error %}
+      <p><strong>Error:</strong> {{ error }}</p>
+  {% endif %}
+
+  <h2>Definition</h2>
+  <p>
+    {{ definition }}
+  </p>
+
+
+
+  <h2>Paper Results</h2>
+
+  <ul>
+    {% for p in papers %}
+    <li>
+      <a href="{{ papers[p] }}" target="_blank"> {{ p }} </a>
+    </li>
+    {% endfor %}
+  </ul>
+
+
+
+{% endblock %}

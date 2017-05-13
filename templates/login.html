@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+{% set active_page = "sign_in" %}
+
+{% block content %}
+
+  {% if error %}
+      <p><strong>Error:</strong> {{ error }}
+      {% endif %}
+
+
+  <h2>Search for any term here ...</h2>
+
+
+    <form action="{{ url_for('show_search') }}" method="post" class="form-signin">
+        <p></p>
+
+        <label for="inputName" class="sr-only"></label>
+        <input type="name" name="inputName" id="inputName" class="form-control" placeholder="Search for any medical-related term..." required autofocus>
+        <p></p>
+          
+        <input type="submit" id="btnsearch" class="btn btn-lg btn-primary btn-block"></button>
+    
+    </form>
+
+{% endblock %}

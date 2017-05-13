@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Meducate</title>
+
+    <link href="./static/jumbotron-narrow.css" rel="stylesheet">
+    <script src="./static/jquery.min.js"></script>
+    <script src="./static/bootstrap.min.js"></script>
+    <script src="./static/search.js"></script>
+    <link rel="stylesheet" type="text/css" href="./static/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="./static/style.css">
+    
+</head>
+
+{% set navigation_bar = [
+    ('/', 'search', 'Search'),
+    ('/show_login', 'sign_in', 'About')
+] -%}
+
+{% set dashboard_restriction = [
+    'sign_up',
+    'sign_in'
+] -%}
+
+{% set active_page = active_page -%}
+
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12>"></div>
+        </div>
+        <div class="row">
+            <div class="col-lg-2"></div>
+            <div class="col-lg-8">
+                <div class="header">
+                    <nav>
+                        <ul class="nav nav-pills pull-right">
+                            {% if not (active_page in dashboard_restriction) %}
+                                <li{% if active_page == 'dashboard' %} class="active"{% endif %}>
+                                    <a href="/dashboard">Dashboard</a>
+                                </li>
+                            {% else %}    
+                                {% for href, id, caption in navigation_bar %}
+                                    <li{% if id == active_page %} class="active"{% endif %}>
+                                        <a href="{{ href|e }}">{{ caption|e }}</a>
+                                    </li>  
+                                {% endfor %}
+                            {% endif %}    
+                        </ul>
+                    </nav>
+                    <h3 class="text-muted"><a href="/">Meducate</a></h3>
+                </div>
+
+                {% block content %}
+                {% endblock %}
+
+            </div>    
+        </div>
+
+    </div>
+</body>
+
+</html>
+
+
+ 
