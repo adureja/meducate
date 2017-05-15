@@ -18,25 +18,25 @@ def show_results():
     search = request.form['searchTerm']
 
     #Panel 1 -- Definition
-    #definition = show_definition(search)
-    definition = "Mesothelioma: A malignant tumor of the mesothelium, the thin lining of the surface of the body cavities and the organs that are contained within them. Most mesotheliomas begin as one or more nodules that progressively grow to form a solid coating of tumor surrounding the lung, abdominal organs, or heart. Mesothelioma occurs most commonly in the chest cavity and is associated with exposure to asbestos in up to 90 percent of cases. The risk of mesothelioma increases with the intensity and duration of exposure to asbestos. Family members and others living with asbestos workers may also have an increased risk of developing mesothelioma and possibly other asbestos-related diseases. This risk may be the result of exposure to asbestos dust brought home on the clothing and hair of asbestos workers. Mesothelioma is currently difficult to treat in most cases, and carries a poor prognosis."
+    definition = show_definition(search)
+    #definition = "Mesothelioma: A malignant tumor of the mesothelium, the thin lining of the surface of the body cavities and the organs that are contained within them. Most mesotheliomas begin as one or more nodules that progressively grow to form a solid coating of tumor surrounding the lung, abdominal organs, or heart. Mesothelioma occurs most commonly in the chest cavity and is associated with exposure to asbestos in up to 90 percent of cases. The risk of mesothelioma increases with the intensity and duration of exposure to asbestos. Family members and others living with asbestos workers may also have an increased risk of developing mesothelioma and possibly other asbestos-related diseases. This risk may be the result of exposure to asbestos dust brought home on the clothing and hair of asbestos workers. Mesothelioma is currently difficult to treat in most cases, and carries a poor prognosis."
 
     #Panel 2 -- Videos
-    #videoIds = show_videos(search)
-    videoIds = [u'uAs6eTHN-U8', u'wY_i1OT4kjo', u'8GaklC6RXvQ', u'1lg_qS2b1VE']
+    videoIds = show_videos(search)
+    #videoIds = [u'uAs6eTHN-U8', u'wY_i1OT4kjo', u'8GaklC6RXvQ', u'1lg_qS2b1VE']
 
     #Panel 3 -- Image Gallery
-    #diagram = show_diagram(search)
-    diagram = 'https://thumbs.dreamstime.com/z/pleural-mesothelioma-medical-illustration-effects-32786689.jpg'
+    diagram = show_diagram(search)
+    #diagram = 'https://thumbs.dreamstime.com/z/pleural-mesothelioma-medical-illustration-effects-32786689.jpg'
 
     #Panel 4 -- Interesting Papers
-    #papers = show_papers(search)
-    papers = {'Primary pericardial mesothelioma and asbestos exposure: a rare fatal disease.': 'https://www.ncbi.nlm.nih.gov/pubmed/28500034', 'Induction of IL-17 production from human peripheral blood CD4+ cells by asbestos exposure.': 'https://www.ncbi.nlm.nih.gov/pubmed/28498408', 'Multiple malignant epithelioid mesotheliomas of the liver and greater omentum: a case report and review of the literature.': 'https://www.ncbi.nlm.nih.gov/pubmed/28493096', 'Pemetrexed-induced acute kidney failure following irreversible renal damage: two case reports and literature review.': 'https://www.ncbi.nlm.nih.gov/pubmed/28491851', 'Immune checkpoint inhibitors in malignant pleural mesothelioma.': 'https://www.ncbi.nlm.nih.gov/pubmed/28495276', '[Malignant Pleural Mesothelioma Presenting Refractory Pneumothorax Successfully Treated by Intrapleural Administration of Diluted Fibrin Glue;Report of a Case].': 'https://www.ncbi.nlm.nih.gov/pubmed/28496089'}
+    papers = show_papers(search)
+    #papers = {'Primary pericardial mesothelioma and asbestos exposure: a rare fatal disease.': 'https://www.ncbi.nlm.nih.gov/pubmed/28500034', 'Induction of IL-17 production from human peripheral blood CD4+ cells by asbestos exposure.': 'https://www.ncbi.nlm.nih.gov/pubmed/28498408', 'Multiple malignant epithelioid mesotheliomas of the liver and greater omentum: a case report and review of the literature.': 'https://www.ncbi.nlm.nih.gov/pubmed/28493096', 'Pemetrexed-induced acute kidney failure following irreversible renal damage: two case reports and literature review.': 'https://www.ncbi.nlm.nih.gov/pubmed/28491851', 'Immune checkpoint inhibitors in malignant pleural mesothelioma.': 'https://www.ncbi.nlm.nih.gov/pubmed/28495276', '[Malignant Pleural Mesothelioma Presenting Refractory Pneumothorax Successfully Treated by Intrapleural Administration of Diluted Fibrin Glue;Report of a Case].': 'https://www.ncbi.nlm.nih.gov/pubmed/28496089'}
 
 
     #return '%s --' % linkResults
 
-    return render_template('results.html', definition = definition, videoIds = videoIds, diagram = diagram, papers = papers)
+    return render_template('results_preconstruct.html', definition = definition, videoIds = videoIds, diagram = diagram, papers = papers)
 
 
 ### HELPER METHODS
