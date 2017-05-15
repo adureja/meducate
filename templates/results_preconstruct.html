@@ -1,0 +1,67 @@
+{% extends "layout.html" %}
+{% set active_page = "results" %}
+
+{% block content %}
+
+  {% if error %}
+      <p><strong>Error:</strong> {{ error }}</p>
+  {% endif %}
+
+  <h2>Definition</h2>
+  <p>
+    {{ definition }}
+  </p>
+
+  <h2>Video Gallery</h2>
+  <div class="container"> 
+    <div id="myCarousel" class="carousel slide" data-interval="false">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+        <li data-target="#myCarousel" data-slide-to="3"></li>
+      </ol>
+
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner">
+
+        {% for i in videoIds %}
+
+        <div class="item {% if videoIds[0] == i %}active{% endif %}">
+          <div class="videowrapper">
+            <iframe src="https://www.youtube.com/embed/{{ i }}" frameborder="0" allowfullscreen></iframe>
+          </div>
+        </div>
+
+        {% endfor %}
+        
+      </div>
+
+      <!-- Left and right controls -->
+      <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+        <span class="icon-prev"></span>
+      </a>
+      <a class="right carousel-control" href="#myCarousel" data-slide="next">
+        <span class="icon-next"></span>
+      </a>
+    </div>
+  </div>
+
+  <h2>Diagram</h2>
+  <img src="{{ diagram }}" class="img-thumbnail" alt="Diagram" id="diagram">
+
+
+  <h2>Paper Results</h2>
+
+  <ul>
+    {% for p in papers %}
+    <li>
+      <a href="{{ papers[p] }}" target="_blank"> {{ p }} </a>
+    </li>
+    {% endfor %}
+  </ul>
+
+
+
+{% endblock %}
