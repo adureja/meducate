@@ -8,18 +8,19 @@
   {% endif %}
 
 
-  <h2>Search for any term here...</h2>
+  <h2>Your modern medical encyclopedia.</h2>
 
 
     <form action="{{ url_for('show_results') }}" method="post">
-        <p></p>
+        <p><br /></p>
 
         <label for="searchTerm" class="sr-only"></label>
-        <input type="text" name="searchTerm" class="form-control" placeholder="Search for any medical-related term..." required autofocus>
-        <p></p>
-          
-        <input type="submit" class="btn btn-lg btn-primary btn-block"></button>
-    
+        <input type="text" name="searchTerm" class="form-control" placeholder="e.g. mesothelioma, endarterectomy" required autofocus>
+        
+        <p><br /></p>
+
+        <input type="submit" class="btn btn-lg btn-success" value="Search" id="searchSubmit">
+
     </form>
 
 {% endblock %}

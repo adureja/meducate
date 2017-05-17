@@ -40,19 +40,63 @@ div {
 
 #map {
     width: 100%;
-    height: 100%;
-    min-height: 100%;
-    background: red;
+    height: 80%;
+    min-height: 80%;
     display: block;
 }
 
-img {
+#definitionPanel {
+    background: #EA8780;
+    width: 49%;
+    margin: 0.25%;
+    height: 40vh;
+    overflow-y: scroll;
+}
 
+#videoPanel {
+    background: #9ABEF9;
+    width: 49%;
+    margin: 0.25%;
+    height: 40vh;
+}
+
+#diagramPanel {
+    background: #97BFAB;
+    width: 49%;
+    margin: 0.25%;
+    height: 40vh;
+}
+
+#papersPanel {
+    background: #FDC14E;
+    width: 49%;
+    margin: 0.25%;
+    height: 40vh;
+}
+
+img {
+    cursor: zoom-in;
 }
 
 #diagram {
-    width: 100%;
-    height: auto;
+    height: 80%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+input {
+
+}
+
+.form-control {
+    padding: 20px
+}
+
+#searchSubmit {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 html, body {
@@ -65,9 +109,36 @@ html, body {
 }
 
 p {
-	text-align: center
+	text-align: justify
 }
 
 table {
   width: 100%;
+}
+
+
+/* Extra small devices (phones, up to 480px) */
+@media screen and (max-width: 767px) {
+    body {
+        font-size: 0.8rm;
+    }
+}
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991px) {
+    body {
+        font-size: 0.9rm;
+    }
+}
+/* tablets/desktops and up ----------- */
+@media (min-width: 992px) and (max-width: 1199px) {
+    body {
+        font-size: 1.1rm;
+    }
+}
+/* large desktops and up ----------- */
+@media screen and (min-width: 1200px) {
+    body {
+        font-size: 1.2rm;
+    }
+
 }
